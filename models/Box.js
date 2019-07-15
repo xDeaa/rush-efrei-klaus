@@ -1,4 +1,4 @@
-import Packaging from "./Packaging";
+import Packaging from "./protocols/Packaging";
 
 export default class Box extends Packaging {
 

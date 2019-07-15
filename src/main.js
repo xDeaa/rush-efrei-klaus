@@ -3,7 +3,7 @@ import DragonBall from '../models/DragonBall';
 import Box from '../models/Box';
 import Elf from '../models/Elf';
 import GiftWrap from '../models/GiftWrap';
-import DBHeroes from '../models/DBHeroes';
+import DBHeroes from '../models/protocols/DBHeroes';
 import Table from '../models/Table';
 import ConveyorBelt from '../models/ConveyorBelt';
 

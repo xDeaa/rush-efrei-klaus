@@ -1,4 +1,4 @@
-import Toy from './Toy';
+import Toy from './protocols/Toy';
 
 export default class Pony extends Toy {
     #nb = 1;

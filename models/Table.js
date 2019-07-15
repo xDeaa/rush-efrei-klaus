@@ -1,4 +1,4 @@
-import Furniture from "./Furniture";
+import Furniture from "./protocols/Furniture";
 
 export default class Table extends Furniture {
 

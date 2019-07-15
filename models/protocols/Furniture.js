@@ -1,4 +1,4 @@
-import ConveyorBelt from "./ConveyorBelt";
+import ConveyorBelt from "../ConveyorBelt";
 
 export default class Furniture {
     content = [];

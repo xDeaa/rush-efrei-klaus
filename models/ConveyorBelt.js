@@ -1,4 +1,4 @@
-import Furniture from "./Furniture";
+import Furniture from "./protocols/Furniture";
 import Box from "./Box";
 import GiftWrap from "./GiftWrap";
 import Pony from "./Pony";
@@ -42,7 +42,7 @@ export default class ConveyorBelt extends Furniture {
             this.content.pop();
             this.isBusy = false;
         } else {
-            console.log("Sorry i can't send  nothing to Santa");
+            console.log("Sorry i can't send nothing to Santa");
         }
     }
 

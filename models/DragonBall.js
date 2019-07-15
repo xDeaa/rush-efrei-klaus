@@ -1,17 +1,9 @@
-import Figurine from './Toy';
-import DBHeroes from './DBHeroes';
+import Figurine from './protocols/Figurine';
+import DBHeroes from './protocols/DBHeroes';
 
 export default class DragonBall extends Figurine {
     #character = "";
     
-    #random() {
-        const random = Math.floor(Math.random() * Math.floor(4))
-        if (random == 0) return DBHeroes.SANGOKU;
-        if (random == 1) return DBHeroes.BEJITA;
-        if (random == 2) return DBHeroes.BEERUS;
-        if (random == 3) return DBHeroes.KAMESENNIN;
-    }
-
     constructor(character) {
         super();
         if(character == null){
@@ -34,5 +26,13 @@ export default class DragonBall extends Figurine {
 
     getType() {
         return `DragonBall Figurine ${this.#character}`;
+    }
+
+    #random() {
+        const random = Math.floor(Math.random() * Math.floor(4))
+        if (random == 0) return DBHeroes.SANGOKU;
+        if (random == 1) return DBHeroes.BEJITA;
+        if (random == 2) return DBHeroes.BEERUS;
+        if (random == 3) return DBHeroes.KAMESENNIN;
     }
 }
