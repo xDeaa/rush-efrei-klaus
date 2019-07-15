@@ -1,0 +1,20 @@
+{
+  "name": "rush-efrei-klaus.js",
+  "version": "1.0.0",
+  "main": "main.js",
+  "repository": "https://github.com/xDeaa/rush-efrei-klaus",
+  "license": "MIT",
+  "scripts": {
+    "dev": "npx babel-node src/main.js",
+    "build": "npx babel src  --out-dir dist",
+    "start": "node dist/main.js"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.5.0",
+    "@babel/core": "^7.5.4",
+    "@babel/node": "^7.5.0",
+    "@babel/plugin-proposal-class-properties": "^7.5.0",
+    "@babel/plugin-proposal-private-methods": "^7.4.4",
+    "@babel/preset-env": "^7.5.4"
+  }
+}
