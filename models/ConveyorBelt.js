@@ -7,26 +7,42 @@ import DragonBall from "./DragonBall";
 export default class ConveyorBelt extends Furniture {
     isBusy = false;
 
-    put(object) {
-        if (!this.isBusy) {
-            this.isBusy = true;
-            this.content.push(object);
-            console.log(`${Object.getPrototypeOf(object.constructor).name} is on CoveyorBelt`)
-        } else {
-            console.log("Sorry i'm busy come later");
-        }
-    }
+    // put(object) {
+    //     if (!this.isBusy) {
+    //         this.isBusy = true;
+    //         this.content.push(object);
+    //         console.log(`${this.getNameObject()} is on CoveyorBelt`)
+    //     } else {
+    //         console.log("Sorry i'm busy come later");
+    //     }
+    // }
 
-    take() {
-        this.isBusy = false;
-    }
+    // take() {
+    //     if (this.content.length == 0) {
+    //         console.log("Sorry nothing is on the conveyorBelt try later");
+    //     } else {
+    //         this.isBusy = false;
+    //         console.log(`${this.getNameObject()} is been taken`);
+    //     }
+    // }
 
     in() {
         if (!this.isBusy) {
             const object = this.#randomObject();
             this.content.push(object)
+            this.isBusy = true
         } else {
             console.log("Sorry i'm busy come later");
+        }
+    }
+
+    out() {
+        if (this.isBusy) {
+            console.log(`I send to Santa your ${this.getNameObject()} `);
+            this.content.pop();
+            this.isBusy = false;
+        } else {
+            console.log("Sorry i can't send  nothing to Santa");
         }
     }
 

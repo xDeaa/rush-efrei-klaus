@@ -54,8 +54,8 @@ export default class Elf {
         furnitures.put(object);
     }
 
-    take() {
-
+    take(furnitures) {
+        furnitures.take();
     }
 
     look(furnitures) {
@@ -68,5 +68,9 @@ export default class Elf {
 
     in(belt) {
         belt.in();
+    }
+
+    out(belt) {
+        belt.out()
     }
 }

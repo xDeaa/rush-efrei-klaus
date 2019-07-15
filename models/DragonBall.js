@@ -28,8 +28,6 @@ export default class DragonBall extends Figurine {
             Sawagu Genki-Dama --Sparking !`);
     }
 
-    
-
     isMoved() {
         console.log("Kamé Hamé Ha!");
     }
