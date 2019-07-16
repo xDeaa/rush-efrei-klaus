@@ -2,84 +2,84 @@
   <img src="./assets/efrei-klaus-logo.png"/>
 </p>
 
-## <a name='TOC'>đ Summary</a>
+## <a name='TOC'>📗 Summary</a>
 
 - [Rules](#rules)
 - [Overview](#overview)
 - [Stack](#stack)
 - [Credits](#credits)
 
-## <a name='overview'>đŽđžâ Rules</a>
+## <a name='overview'>👮🏾‍ Rules</a>
 =================
 
-Hi, voici quelques rĂ¨gles pour mener Ă  bien ce projet :)
+Hi, voici quelques règles pour mener à bien ce projet :)
 
-* Ce projet DOIT ĂŞtre faire tout seul
-* Le sujet est en franĂ§ais mais votre code DOIT ĂŞtre en anglais [`classe`, `variable`, etc.]
-* Vous DEVEZ crĂŠer un dĂŠpot git pour ce projet
-* Vous DEVEZ crĂŠer un diagramme `UML` de votre projet sur [LucidChart](lucidchart.com)
-* Vous DEVEZ me notifier par un message privĂŠ original le COMMENCEMENT du projet ET
-le PASSAGE Ă  chaque ĂŠtape.
+* Ce projet DOIT être faire tout seul
+* Le sujet est en français mais votre code DOIT être en anglais [`classe`, `variable`, etc.]
+* Vous DEVEZ créer un dépot git pour ce projet
+* Vous DEVEZ créer un diagramme `UML` de votre projet sur [LucidChart](lucidchart.com)
+* Vous DEVEZ me notifier par un message privé original le COMMENCEMENT du projet ET
+le PASSAGE à chaque étape.
 
-> Bien ĂŠvidemment, vous pouvez ĂŠchanger entre vous, le peer-learning est la clĂŠ de
-votre apprentissage MAIS la copie sera sanctionnĂŠ
+> Bien évidemment, vous pouvez échanger entre vous, le peer-learning est la clé de
+votre apprentissage MAIS la copie sera sanctionné
 
-N'hĂŠsitez pas en cas de de question Ă  les poser sur le channel `pragmatic` de slack,
+N'hésitez pas en cas de de question à les poser sur le channel `pragmatic` de slack,
 il n'y a pas de question inutile.
 
 
-## <a name='overview'>đđź Overview</a>
+## <a name='overview'>🎅🏼 Overview</a>
 =================
 
-Le peĚre NoeĚl a fait une demande officielle aĚ l'Efrei pour informatiser sa chaine d'emballage de cadeaux;
-La monde tend vers une robotisation et le pĂ¨re NoĂŤl dit SK vous demande de concevoir un simulateur de chaine d'emballage.
+Le père Noël a fait une demande officielle à l'Efrei pour informatiser sa chaine d'emballage de cadeaux;
+La monde tend vers une robotisation et le père Noël dit SK vous demande de concevoir un simulateur de chaine d'emballage.
 
-SK vous fournit une liste deĚcrivant le meĚtier de l'elfe sur la chaine d'emballage de cadeaux.
-Votre chef de projet a preĚfeĚreĚ prendre les choses en main et a traiteĚ pour vous l'analyse fonctionnelle et certains aspects de conception.
+SK vous fournit une liste décrivant le métier de l'elfe sur la chaine d'emballage de cadeaux.
+Votre chef de projet a préféré prendre les choses en main et a traité pour vous l'analyse fonctionnelle et certains aspects de conception.
 
-Il vous fournit une liste d'indications et de contraintes pour l'impleĚmentation des diffeĚrentes parties du simulateur.
+Il vous fournit une liste d'indications et de contraintes pour l'implémentation des différentes parties du simulateur.
 
 ## Etape \#1. Poney et figurines Dragon Ball
 
-Le chef de projet vous demande d'eĚcrire les classes Toy, Pony, Figurine et DragonBall.
+Le chef de projet vous demande d'écrire les classes Toy, Pony, Figurine et DragonBall.
 
 Il vous indique:
 - Un `Pony` est un `Toy`
 - Une `Figurine` est un `Toy`
 - Un `DragonBall` est une `Figurine`
 
-> đĄ Tips: qu'est ce que reprĂŠsente la "classe" `Toy` ?
+> 💡 Tips: qu'est ce que représente la "classe" `Toy` ?
 
-Un jouet peut ĂŞtre dĂŠplacĂŠ via la mĂŠthode `isMoved`. De plus un jouet possĂ¨de un
+Un jouet peut être déplacé via la méthode `isMoved`. De plus un jouet possède un
 attribut `type` de type `String` accessible via un **getter**
 
 ### Hi, poney
 
-Un `Pony` possĂ¨de un attribut **statique** privĂŠ  `_nb` qui determine le nombre d'objet instanciĂŠ.
-Il est par dĂŠfaut initialisĂŠ Ă  **1**.
+Un `Pony` possède un attribut **statique** privé  `_nb` qui determine le nombre d'objet instancié.
+Il est par défaut initialisé à **1**.
 
-Cette classe possĂ¨de ĂŠgalement un attribut `id` qui est ĂŠgale au numĂŠro de l'objet.
-Lorsqu'un `Pony` est instanciĂŠ il affiche sur la sortie standard:
+Cette classe possède également un attribut `id` qui est égale au numéro de l'objet.
+Lorsqu'un `Pony` est instancié il affiche sur la sortie standard:
 
 ```sh
 Pony #X is singing -->
-Dou-double poney, jâfais izi money
-DâoĂš tu mâconnais ? Parle moi en billets violets
-Dou-double poney, jâfais izi money
+Dou-double poney, j’fais izi money
+D’où tu m’connais ? Parle moi en billets violets
+Dou-double poney, j’fais izi money
 
 ```
 
-> RemplacĂŠ X par l'identifiant
+> Remplacé X par l'identifiant
 
-L'attribut type retourne la chaine de caractĂ¨re `Pony #X`
+L'attribut type retourne la chaine de caractère `Pony #X`
 
-Quand un `Pony` est bougĂŠ il affiche `Huuuuuuhu!`
+Quand un `Pony` est bougé il affiche `Huuuuuuhu!`
 
 
 ### Dragon Ball
 
-Une figurine `DragonBall` possĂ¨de un attribut privĂŠ `_character` de type Enum `DBHeroes`
-dĂŠfinit comme suit:
+Une figurine `DragonBall` possède un attribut privé `_character` de type Enum `DBHeroes`
+définit comme suit:
 
 ```swift
 enum DBHeroes {
@@ -90,7 +90,7 @@ enum DBHeroes {
 }
 ```
 
-Pour instancier une figurine `DragonBall`, il faut spĂŠcifier le personnage via l'enum et ainsi
+Pour instancier une figurine `DragonBall`, il faut spécifier le personnage via l'enum et ainsi
 s'affiche sur la sortie standard:
 
 ```sh
@@ -103,24 +103,24 @@ Sawagu Genki-Dama --Sparking !
 
 ```
 
-> RemplacĂŠ X par le personnage
+> Remplacé X par le personnage
 
-L'attribut type de la classe retourne la chaine de caractĂ¨re `Dragon Ball figurine X`
+L'attribut type de la classe retourne la chaine de caractère `Dragon Ball figurine X`
 
-Quand un `DragonBall` est bougĂŠ il affiche `KamĂŠ HamĂŠ Ha!`
+Quand un `DragonBall` est bougé il affiche `Kamé Hamé Ha!`
 
 ### TEST
 
 Voici les fichiers que vous devriez avoir:
 
 ```sh
-~/M/cdiwm-rush-efrei-klaus âŻâŻâŻ tree .
+~/M/cdiwm-rush-efrei-klaus ❯❯❯ tree .
 .
-âââ class.DragonBall.swift
-âââ class.Pony.swift
-âââ main.swift
-âââ protocol.Figurine.swift
-âââ protocol.Toy.swift
+├── class.DragonBall.swift
+├── class.Pony.swift
+├── main.swift
+├── protocol.Figurine.swift
+└── protocol.Toy.swift
 
 0 directories, 5 files
 ```
@@ -139,12 +139,12 @@ goku.isMoved()
 ```
 
 ```sh
-~/Efreitech/pp âŻâŻâŻ swiftc *.swift -o bin
-~/Efreitech/pp âŻâŻâŻ ./bin
+~/Efreitech/pp ❯❯❯ swiftc *.swift -o bin
+~/Efreitech/pp ❯❯❯ ./bin
 Pony #1 is singing -->
-Dou-double poney, jâfais izi money
-DâoĂš tu mâconnais ? Parle moi en billets violets
-Dou-double poney, jâfais izi money
+Dou-double poney, j’fais izi money
+D’où tu m’connais ? Parle moi en billets violets
+Dou-double poney, j’fais izi money
 
 SANGOKU is singing -->
 CHA-LA HEAD CHA-LA
@@ -154,104 +154,104 @@ Mune ga pachi-pachi suru hodo
 Sawagu Genki-Dama --Sparking !
 
 Huuuuuuhu!
-KamĂŠ HamĂŠ Ha!
+Kamé Hamé Ha!
 ````
 
 ## Etape \#2. Une histoire d'emballage
 
-Il faut maintenant eĚtre capable de geĚrer l'emballage des cadeaux:
+Il faut maintenant être capable de gérer l'emballage des cadeaux:
 
-#### PrĂŠparation
+#### Préparation
 
 * Une `Box` est un `Packaging`
 * Un `GiftWrap` est aussi un `Packaging`
 
-> đĄ Tips: qu'est ce que reprĂŠsente la "classe" `Packaging` ?
+> 💡 Tips: qu'est ce que représente la "classe" `Packaging` ?
 
-Un `Packaging` possĂ¨de 2 attributs:
-* `isOpen` un boolĂŠen qui permet de savoir s'il est ouvert ou fermĂŠ
-* `toy` un jouet qui correspond Ă  celui qui est emballĂŠ
+Un `Packaging` possède 2 attributs:
+* `isOpen` un booléen qui permet de savoir s'il est ouvert ou fermé
+* `toy` un jouet qui correspond à celui qui est emballé
 
-Par dĂŠfaut un emballage est fermĂŠ et il n'y a pas de jouet emballĂŠ
+Par défaut un emballage est fermé et il n'y a pas de jouet emballé
 
-> đĄ Tips: Valeur par dĂŠfaut d'un jouet -- https://goo.gl/JF8SAv
+> 💡 Tips: Valeur par défaut d'un jouet -- https://goo.gl/JF8SAv
 
-Un `Packaging` possĂ¨de 2 mĂŠthodes:
+Un `Packaging` possède 2 méthodes:
 * `open` qui permet d'ouvrir un emballage
-* `insert` qui prend un jouet en paramĂŞtre et permet de l'emballer
+* `insert` qui prend un jouet en paramêtre et permet de l'emballer
 
-Lorsqu'un objet est emballĂŠ, l'emballage devient fermĂŠ.
+Lorsqu'un objet est emballé, l'emballage devient fermé.
 
-> đĄ Tips: Lorsqu'une mĂŠthode modifie un attribut elle n'est plus immutable, ie
-qui ne change pas le comportement de l'objet (choix par dĂŠfaut).
-Comment faire pour que les mĂŠthodes ci-dessus soit mutable?
+> 💡 Tips: Lorsqu'une méthode modifie un attribut elle n'est plus immutable, ie
+qui ne change pas le comportement de l'objet (choix par défaut).
+Comment faire pour que les méthodes ci-dessus soit mutable?
 
 ### Factorisation
 
-Les protocoles c'est bien mais l'implĂŠmentation des classes `Box` et `GiftWrap`
+Les protocoles c'est bien mais l'implémentation des classes `Box` et `GiftWrap`
 n'est-elle pas un duplicat?
-Oui car la logique est la mĂŞme pour ces 2 classes et ce n'est pas une bonne pratique.
+Oui car la logique est la même pour ces 2 classes et ce n'est pas une bonne pratique.
 
-Heureusement, il existe un moyen d'implĂŠmenter une seule fois une mĂŞme logique d'un protocol.
+Heureusement, il existe un moyen d'implémenter une seule fois une même logique d'un protocol.
 Il s'agit des `extension` --> swift skill++ yeaaaaah :)
 
 #### Les elfes entrent dans le Game
 
-Un `Elf` est une classe qui possĂ¨de un attribut `nickname` de type `String` avec
+Un `Elf` est une classe qui possède un attribut `nickname` de type `String` avec
 **getter**+**setter**
 
-Lorsque l'on crĂŠe un Elf, on doit spĂŠcifiĂŠ son `nickname`
+Lorsque l'on crée un Elf, on doit spécifié son `nickname`
 
 ### Pack
 
-Un elf peut emballer un cadeau [et un seul] via une mĂŠthode `pack` qui prend en
-paramĂŞtre un `Packaging` et un `Toy`
+Un elf peut emballer un cadeau [et un seul] via une méthode `pack` qui prend en
+paramêtre un `Packaging` et un `Toy`
 
-Si l'emballage est fermĂŠ, l'elf dit: `Sorry this package is not open`
-Si l'emballage possĂ¨de dĂŠjĂ  un cadeau, l'elf dit: `Sorry this package already filled`
+Si l'emballage est fermé, l'elf dit: `Sorry this package is not open`
+Si l'emballage possède déjà un cadeau, l'elf dit: `Sorry this package already filled`
 
-Sinon, le cadeau est ajoutĂŠ Ă  l'emballage et l'elf dit:
+Sinon, le cadeau est ajouté à l'emballage et l'elf dit:
 `Yeaaaah! Just packing the toy ~~ X ~~`
 
-> RemplacĂŠ X par le type du jouet
+> Remplacé X par le type du jouet
 
-Attention, un papier cadeau n'a pas besoin d'eĚtre ouvert pour emballer.
+Attention, un papier cadeau n'a pas besoin d'être ouvert pour emballer.
 
-> đĄ Tips: Cette mĂŠthode modifie le comportement d'un objet passĂŠ en paramĂŞtre (packaging).
-Comment faire pour que le changement effectuĂŠ au sein de la mĂŠthode soit "rĂŠellement" effectif ?
+> 💡 Tips: Cette méthode modifie le comportement d'un objet passé en paramêtre (packaging).
+Comment faire pour que le changement effectué au sein de la méthode soit "réellement" effectif ?
 
 #### Unpack
 
-Un elf peut dĂŠballer un cadeau via une mĂŠthode `unpack` qui prend en paramĂŞtre un
+Un elf peut déballer un cadeau via une méthode `unpack` qui prend en paramêtre un
 `Packaging`
 
 Si l'emballage est ouvert ou qu'il n'y a pas de cadeau, l'elf dit:
 `Sorry this package is already empty`
 
-Sinon, le cadeau est enlevĂŠ de l'emballage et l'elf dit:
+Sinon, le cadeau est enlevé de l'emballage et l'elf dit:
 `Ooooooh! Just unpacking the toy ~~ X ~~`
 
-Le jouet Ă  l'intĂŠrieur de l'emballage est retournĂŠ
+Le jouet à l'intérieur de l'emballage est retourné
 
-> RemplacĂŠ X par le type du jouet
+> Remplacé X par le type du jouet
 
 ### TEST
 
 Voici les fichiers que vous devriez avoir:
 
 ```sh
-~/M/cdiwm-rush-efrei-klaus âŻâŻâŻ tree .
+~/M/cdiwm-rush-efrei-klaus ❯❯❯ tree .
 .
-âââ class.Box.swift
-âââ class.DragonBall.swift
-âââ class.Elf.swift
-âââ class.GiftWrap.swift
-âââ class.Pony.swift
-âââ extension.Packaging.swift
-âââ main.swift
-âââ protocol.Figurine.swift
-âââ protocol.Packaging.swift
-âââ protocol.Toy.swift
+├── class.Box.swift
+├── class.DragonBall.swift
+├── class.Elf.swift
+├── class.GiftWrap.swift
+├── class.Pony.swift
+├── extension.Packaging.swift
+├── main.swift
+├── protocol.Figurine.swift
+├── protocol.Packaging.swift
+└── protocol.Toy.swift
 
 0 directories, 10 files
 ```
@@ -283,9 +283,9 @@ print(r == nil)
 
 ```sh
 Pony #1 is singing -->
-Dou-double poney, jâfais izi money
-DâoĂš tu mâconnais ? Parle moi en billets violets
-Dou-double poney, jâfais izi money
+Dou-double poney, j’fais izi money
+D’où tu m’connais ? Parle moi en billets violets
+Dou-double poney, j’fais izi money
 
 SANGOKU is singing -->
 CHA-LA HEAD CHA-LA
@@ -295,7 +295,7 @@ Mune ga pachi-pachi suru hodo
 Sawagu Genki-Dama --Sparking !
 
 Huuuuuuhu!
-KamĂŠ HamĂŠ Ha!
+Kamé Hamé Ha!
 Sorry this package is not open
 Yeaaaah! Just packing the toy ~~ Dragon Ball figurine SANGOKU ~~
 Yeaaaah! Just packing the toy ~~ Pony #1 ~~
@@ -310,60 +310,60 @@ true
 
 ### Mise en place
 
-Il faut maintenant eĚtre capable de geĚrer le poste de travail :
+Il faut maintenant être capable de gérer le poste de travail :
 
 Avant toute chose, il faut savoir que tout est `Object`, ie les jouets et les emballages.
 
-L'elfe a une `Table` devant lui et un `ConveyorBelt` (tapis roulant) aĚ coĚteĚ de lui.
-C'est deux entitĂŠs sont des meubles aka `Furniture`.
+L'elfe a une `Table` devant lui et un `ConveyorBelt` (tapis roulant) à côté de lui.
+C'est deux entités sont des meubles aka `Furniture`.
 
-L'elfe peut poser et prendre sur un meuble des objets via les mĂŠthodes `put` et `take`.
+L'elfe peut poser et prendre sur un meuble des objets via les méthodes `put` et `take`.
 
-On ne peut rien poser sur le tapis roulant s'il y a deĚjaĚ quelque chose, un attribut `isBusy`
-nous permet de le connaĂŽtre l'ĂŠtat de ce tapis. Par dĂŠfaut, un tapis est disponible.
+On ne peut rien poser sur le tapis roulant s'il y a déjà quelque chose, un attribut `isBusy`
+nous permet de le connaître l'état de ce tapis. Par défaut, un tapis est disponible.
 
 Quand il n'y a plus de place sur la table, elle craque et dit car elle ne peut contenir
 qu'un maximum de 10 objets.
-Pour cela crĂŠer un attribut `content` qui est un tableau d'`Object`.
+Pour cela créer un attribut `content` qui est un tableau d'`Object`.
 
-SpĂŠcificitĂŠ de la `Table`, la mĂŠthode `take` prend un objet Ă  la fin du tableau et
-il y a une mĂŠthode `take` supplĂŠmentaire qui prend en paramĂŞtre la position de l'objet.
+Spécificité de la `Table`, la méthode `take` prend un objet à la fin du tableau et
+il y a une méthode `take` supplémentaire qui prend en paramêtre la position de l'objet.
 
-L'elfe recĚ§oit des Obbjets en appuyant sur le bouton `in` du
-tapis roulant ou envoie ce qu'il y a actuellement sur le tapis au peĚre NoeĚl en appuyant sur le bouton `out`
+L'elfe reçoit des Obbjets en appuyant sur le bouton `in` du
+tapis roulant ou envoie ce qu'il y a actuellement sur le tapis au père Noël en appuyant sur le bouton `out`
 
-Un Obbjets envoyeĚ au peĚre NoeĚl est consideĚreĚ comme perdu, le tapis roulant est de nouveau libre.
+Un Obbjets envoyé au père Noël est considéré comme perdu, le tapis roulant est de nouveau libre.
 
-L'elfe peut regarder via la mĂŠthode `look` sur la table pour savoir ce qu'il s'y trouve;
-Il obtient un tableau avec les intituleĚs des diffeĚrents Objets.
+L'elfe peut regarder via la méthode `look` sur la table pour savoir ce qu'il s'y trouve;
+Il obtient un tableau avec les intitulés des différents Objets.
 
 ```sh
 [ "Toy", "Toy", "Packaging", "Toy" ]
 ```
 
-L'elfe peut ĂŠgalement regarder sur le tapis roulant pour savoir ce qu'il s'y trouve.
+L'elfe peut également regarder sur le tapis roulant pour savoir ce qu'il s'y trouve.
 
 ### TEST
 
 Voici les fichiers que vous devriez avoir:
 
 ```sh
-~/M/cdiwm-rush-efrei-klaus âŻâŻâŻ tree .
+~/M/cdiwm-rush-efrei-klaus ❯❯❯ tree .
 .
-âââ class.Box.swift
-âââ class.ConveyorBelt.swift
-âââ class.DragonBall.swift
-âââ class.Elf.swift
-âââ class.GiftWrap.swift
-âââ class.Object.swift
-âââ class.Pony.swift
-âââ class.Table.swift
-âââ extension.Packaging.swift
-âââ main.swift
-âââ protocol.Figurine.swift
-âââ protocol.Furniture.swift
-âââ protocol.Packaging.swift
-âââ protocol.Toy.swift
+├── class.Box.swift
+├── class.ConveyorBelt.swift
+├── class.DragonBall.swift
+├── class.Elf.swift
+├── class.GiftWrap.swift
+├── class.Object.swift
+├── class.Pony.swift
+├── class.Table.swift
+├── extension.Packaging.swift
+├── main.swift
+├── protocol.Figurine.swift
+├── protocol.Furniture.swift
+├── protocol.Packaging.swift
+└── protocol.Toy.swift
 
 0 directories, 14 files
 ```
@@ -385,44 +385,44 @@ majdi.put(furniture: table, obj: box)
 
 ### Patterns
 
-SK vous demande d'eĚcrire les protocoles `PTable` et `PTapisRoulant` ainsi que les classes
-`TableFactory` et `ConveyorBeltFactory` impleĚmentant ces protocoles.
+SK vous demande d'écrire les protocoles `PTable` et `PTapisRoulant` ainsi que les classes
+`TableFactory` et `ConveyorBeltFactory` implémentant ces protocoles.
 
-La table et le tapis roulant du peĚre NoeĚl contiennent ce qu'il faut pour faire 2 cadeaux.
+La table et le tapis roulant du père Noël contiennent ce qu'il faut pour faire 2 cadeaux.
 
-La disposition/reĚpartition des emballages/jouets entre le tapis et la table est aĚ votre convenance.
-SK veut que vous lui fournissiez deux mĂŠthodes:
+La disposition/répartition des emballages/jouets entre le tapis et la table est à votre convenance.
+SK veut que vous lui fournissiez deux méthodes:
 
 ```swift
 makeTable() -> PTable
 makeConveyorBelt() -> PConveyorBelt
 ```
 
-Ces 2 mĂŠthodes permettent de reĚifier (instancier) ces 2 objets.
+Ces 2 méthodes permettent de réifier (instancier) ces 2 objets.
 
 ### TEST
 
 Voici les fichiers que vous devriez avoir:
 
 ```sh
-~/M/cdiwm-rush-efrei-klaus âŻâŻâŻ tree .
+~/M/cdiwm-rush-efrei-klaus ❯❯❯ tree .
 .
-âââ class.Box.swift
-âââ class.ConveyorBelt.swift
-âââ class.DragonBall.swift
-âââ class.Elf.swift
-âââ class.GiftWrap.swift
-âââ class.Object.swift
-âââ class.Pony.swift
-âââ class.Table.swift
-âââ extension.Packaging.swift
-âââ main.swift
-âââ protocol.Figurine.swift
-âââ protocol.Furniture.swift
-âââ protocol.PConveyorBelt.swift
-âââ protocol.PTable.swift
-âââ protocol.Packaging.swift
-âââ protocol.Toy.swift
+├── class.Box.swift
+├── class.ConveyorBelt.swift
+├── class.DragonBall.swift
+├── class.Elf.swift
+├── class.GiftWrap.swift
+├── class.Object.swift
+├── class.Pony.swift
+├── class.Table.swift
+├── extension.Packaging.swift
+├── main.swift
+├── protocol.Figurine.swift
+├── protocol.Furniture.swift
+├── protocol.PConveyorBelt.swift
+├── protocol.PTable.swift
+├── protocol.Packaging.swift
+└── protocol.Toy.swift
 
 0 directories, 16 files
 ```
@@ -431,16 +431,16 @@ Voici les fichiers que vous devriez avoir:
 
 ### Le final
 
-Vous DEVEZ imaginer et implĂŠmenter un moyen de faire communiquer la table et le tapis roulant avec ceux de l'un de vos camarade đą<br />
+Vous DEVEZ imaginer et implémenter un moyen de faire communiquer la table et le tapis roulant avec ceux de l'un de vos camarade 😱<br />
 Pour cela vous devez utiliser des chaussettes magiques.
 
-> Le travail doit ĂŞtre fait en binĂ´me, choose well
+> Le travail doit être fait en binôme, choose well
 
 ## Etape \#6. Bonus
 
 ### Le typage say bien
 
-Tout simplement refaire le projet en TypeScript ou un autre si dĂŠjaĂ  fait ;p
+Tout simplement refaire le projet en TypeScript ou un autre si déjaà fait ;p
 
 ## <a name='credits'>Credits</a>
 
