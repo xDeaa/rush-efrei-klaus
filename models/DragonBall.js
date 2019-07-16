@@ -33,6 +33,6 @@ export default class DragonBall extends Figurine {
         if (random == 0) return DBHeroes.SANGOKU;
         if (random == 1) return DBHeroes.BEJITA;
         if (random == 2) return DBHeroes.BEERUS;
-        if (random == 3) return DBHeroes.KAMESENNIN;
+        return DBHeroes.KAMESENNIN;
     }
 }

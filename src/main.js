@@ -20,22 +20,22 @@ const andrea = new Elf("Andrea");
 
 // Create packaging Box()
 const box = new Box();
-// // Pack DragonBall Sangoku in Box
-// andrea.pack(box,goku);
-// box.open();
-// andrea.pack(box,goku);
+// Pack DragonBall Sangoku in Box
+andrea.pack(box,goku);
+box.open();
+andrea.pack(box,goku);
 
 // // Create packaging GiftWrap()
 const paper = new GiftWrap();
-// // Pack Pony in GiftWrap
-// andrea.pack(paper,pony);
-// andrea.pack(paper,pony);
+// Pack Pony in GiftWrap
+andrea.pack(paper,pony);
+andrea.pack(paper,pony);
 
-// // Unpack GiftWrap 
-// const toy = andrea.unpack(paper)
-// console.log(toy === pony);
-// const r = andrea.unpack(paper)
-// console.log(r == null);
+// Unpack GiftWrap 
+const toy = andrea.unpack(paper)
+console.log(toy === pony);
+const r = andrea.unpack(paper)
+console.log(r == null);
 
 
 console.log("--- Step 3 ---");
@@ -54,22 +54,22 @@ andrea.put(table,box);
 
 // Look what is in Table and ConveyorBelt
 andrea.look(table);
-// andrea.look(conveyor);
+andrea.look(conveyor);
 
-// // Get random object on ConveyorBelt
-andrea.in(conveyor);
+// Get random object on ConveyorBelt
 // andrea.in(conveyor);
+// andrea.in(table);
 andrea.automatisationPackage(table,conveyor)
 // andrea.look(conveyor);
 
-// // Send to santa what'is on ConveyorBelt
+// Send to santa what'is on ConveyorBelt
 // andrea.out(conveyor);
 // andrea.out(conveyor);
 
-// // Put in ConveyorBelt GiftWrap, Pony
+// Put in ConveyorBelt GiftWrap, Pony
 // andrea.put(conveyor, paper);
 // andrea.put(conveyor, pony);
 
-// // Take the last item on ConveyorBelt and Table
+// Take the last item on ConveyorBelt and Table
 // andrea.take(conveyor);
 // andrea.take(table);

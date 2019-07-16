@@ -13,11 +13,13 @@ export default class Elf {
     // Get the nickame of elf
     getNickname() {
         console.log(nickname);
+        return this.nickname;
     }
 
     // Set nickname to elf
     setNickname(name) {
         this.nickname = name;
+        return this.nickname;
     }
 
     // Pack a packaging and a toy
@@ -33,6 +35,7 @@ export default class Elf {
             return
         }
         packaging.insert(toy);
+        
         console.log(`Yeaaaah! Just packing the toy ~~ ${toy.type} ~~`);
         return toy;
     }
@@ -66,7 +69,7 @@ export default class Elf {
         furnitures.take();
     }
 
-    // Look th eobject in Table or CoveyorBelt
+    // Look the object in Table or CoveyorBelt
     look(furnitures) {
         let list = [];
         furnitures.content.forEach(element => {
@@ -77,26 +80,31 @@ export default class Elf {
     }
 
     // Press in put a random object on CoveyorBelt
-    in(belt) {
-        belt.in();
+    in(furniture) {
+        return (furniture instanceof ConveyorBelt) ?  furniture.in() : console.log("Sorry only CoveyorBelt have button in");
     }
 
     // Send to santa or drop object from CoveyorBelt
-    out(belt) {
-        belt.out()
+    out(furniture) {
+        return (furniture instanceof ConveyorBelt) ? furniture.out() : console.log("Sorry only CoveyorBelt have button out");
     }
 
     // Pack a gift with object in Table and CoveyorBelt
     automatisationPackage(table, conveyor) {
-        const itemConveyor = this.look(conveyor);
-        const packaging = conveyor.content[0];
+        let itemConveyor = this.look(conveyor);
         let type, gift;
-        
-        (itemConveyor == 'Packaging') ? type= 'Toy' : type= 'Packaging';
+
+        if (itemConveyor.length == 0) {
+            itemConveyor = this.in(conveyor);
+        }
+
+        const packaging = conveyor.content[0];
+    
+        (itemConveyor == 'Packaging') ? type = 'Toy' : type = 'Packaging';
 
         const checkTable = this.#checkObjectTable(table, type);
-    
-        if( packaging instanceof Box) {
+
+        if (packaging instanceof Box) {
             packaging.open();
         }
         if (checkTable) {

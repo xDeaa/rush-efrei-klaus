@@ -13,11 +13,7 @@ export default class Pony extends Toy {
        this.#nb ++;
     }
 
-    isMoved() {
-        console.log("Huuuuuuhu!")
-    }
+    isMoved() { console.log("Huuuuuuhu!") }
 
-    getType() {
-        return `Pony #${this.id}`;
-    }
+    getType() { return `Pony #${this.id}`; }
 }

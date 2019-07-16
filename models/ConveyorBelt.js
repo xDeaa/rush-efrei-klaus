@@ -38,13 +38,14 @@ export default class ConveyorBelt extends Furniture {
         this.content.push(object)
         this.isBusy = true
         console.log(`${this.getNameObject()} is on CoveyorBelt`);
+        return this.getNameObject();
     }
 
     // Send to santa if is a gift else drop the object
     out(object = '') {
-        this.content.pop();
         if (object) {
             console.log(`I send to Santa your ${this.getNameObject(object)} `);
+            this.#removeItem()
             return
         }
         if (!this.isBusy) {
@@ -52,15 +53,19 @@ export default class ConveyorBelt extends Furniture {
             return
         }
         console.log(`I drop your ${this.getNameObject()} `);
-        this.isBusy = false;
+        this.#removeItem()
     }
 
-    // Return random object Box,GiftWrap,Pony,DragonBall
+    #removeItem() {
+        this.isBusy = false;
+        this.content.pop();
+    }
+    // Return random object Box, GiftWrap, Pony, DragonBall
     #randomObject() {
         const random = Math.floor(Math.random() * Math.floor(4))
         if (random == 0) return new Box();
         if (random == 1) return new GiftWrap();
         if (random == 2) return new Pony();
-        if (random == 3) return new DragonBall();
+        return new DragonBall();
     }
 }

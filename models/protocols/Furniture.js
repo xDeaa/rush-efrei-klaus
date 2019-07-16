@@ -1,9 +1,6 @@
-import ConveyorBelt from "../ConveyorBelt";
-
 export default class Furniture {
     content = [];
     put(object) { return }
-
     take() { return }
 
     // Get the name constructor of the object
