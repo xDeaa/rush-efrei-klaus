@@ -1,5 +1,6 @@
 import Box from "./Box";
 import ConveyorBelt from "./ConveyorBelt";
+import Toy from "./protocols/Toy";
 
 export default class Elf {
 
@@ -42,12 +43,22 @@ export default class Elf {
     }
 
     unpack(packaging) {
-        if (packaging.isOpen == true || packaging.toy == null) {
-            console.log("Sorry this package is already empty");
-        } else {
-            console.log(`Ooooooh! Just unpacking the toy ~~ ${packaging.toy.type} ~~`);
-            return packaging.toy.type
+        const toy = packaging.toy;
+
+        if (packaging instanceof Box) {
+            if (packaging.isOpen == true || packaging.toy == null) {
+                console.log("Sorry this package is already empty");
+                return
+            }
         }
+
+        if (packaging.toy == null) {
+            console.log("Sorry this package is already empty");
+            return
+        }
+        console.log(`Ooooooh! Just unpacking the toy ~~ ${packaging.toy.type} ~~`);
+        packaging.toy = null
+        return toy
     }
 
     put(furnitures, object) {
@@ -61,7 +72,7 @@ export default class Elf {
     look(furnitures) {
         let list = [];
         furnitures.content.forEach(element => {
-            list.push(Object.getPrototypeOf(element.constructor).name)
+            (element instanceof Toy) ? list.push('Toy') : list.push(Object.getPrototypeOf(element.constructor).name)
         });
         console.log(list);
     }

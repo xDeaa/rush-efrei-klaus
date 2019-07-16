@@ -8,67 +8,68 @@ import Table from '../models/Table';
 import ConveyorBelt from '../models/ConveyorBelt';
 
 console.log("--- Step 1 ---");
-// Create new Pony
+// Create new Pony , new DragonBall Sangoku
 const pony = new Pony();
-// pony.isMoved();
-
-// Create new DragonBall Sangoku
 const goku = new DragonBall(DBHeroes.SANGOKU);
+// pony.isMoved();
 // goku.isMoved();
 
 console.log("--- Step 2 ---");
 // Create new Elf named Andrea
 const andrea = new Elf("Andrea");
 
-// Create 2 packaging Box() and GiftWrap()
+// Create packaging Box()
 const box = new Box();
-const paper = new GiftWrap();
-// Pack Pony in Box
-// andrea.pack(box,pony);
+// // Pack DragonBall Sangoku in Box
+// andrea.pack(box,goku);
 // box.open();
-
-// Pack DragonBall Sangoku in Box
 // andrea.pack(box,goku);
 
-// Pack Pony and DragonBall Sangoku in GiftWrap
+// // Create packaging GiftWrap()
+const paper = new GiftWrap();
+// // Pack Pony in GiftWrap
 // andrea.pack(paper,pony);
-// andrea.pack(paper,goku);
+// andrea.pack(paper,pony);
 
-// Unpack GiftWrap and Box
-// andrea.unpack(paper);
-// andrea.unpack(box);
+// // Unpack GiftWrap 
+// const toy = andrea.unpack(paper)
+// console.log(toy === pony);
+// const r = andrea.unpack(paper)
+// console.log(r == null);
+
 
 console.log("--- Step 3 ---");
 // Create 2 new furnitures Table and ConveyorBelt
 const table = new Table();
 const conveyor = new ConveyorBelt();
 
-// Put in Table Pony, Box, GiftWrap, DragonBall Sangoku
+// Put in Table Pony, Box, GiftWrap
+andrea.put(table,paper);
 andrea.put(table,pony);
 andrea.put(table,box);
-andrea.put(table,paper);
-andrea.put(table,goku);
 
-// Put in ConveyorBelt Box and DragonBall Sangoku
-andrea.put(conveyor,box);
-andrea.put(conveyor,goku);
+// // Put in ConveyorBelt Box and DragonBall Sangoku
+// andrea.put(conveyor,box);
+// andrea.put(conveyor,goku);
 
 // Look what is in Table and ConveyorBelt
 andrea.look(table);
 // andrea.look(conveyor);
 
-// Get random objetc on ConveyorBelt
+// // Get random object on ConveyorBelt
 andrea.in(conveyor);
-andrea.look(conveyor);
+andrea.in(conveyor);
 
-// Send to santa what'is on ConveyorBelt
-andrea.out(conveyor);
-andrea.out(conveyor);
+// andrea.look(conveyor);
 
-// Put in ConveyorBelt GiftWrap, Pony
-andrea.put(conveyor, paper);
-andrea.put(conveyor, pony);
+// // Send to santa what'is on ConveyorBelt
+// andrea.out(conveyor);
+// andrea.out(conveyor);
 
-// Take the last item on ConveyorBelt and Table
-andrea.take(conveyor);
-andrea.take(table);
+// // Put in ConveyorBelt GiftWrap, Pony
+// andrea.put(conveyor, paper);
+// andrea.put(conveyor, pony);
+
+// // Take the last item on ConveyorBelt and Table
+// andrea.take(conveyor);
+// andrea.take(table);

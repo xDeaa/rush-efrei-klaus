@@ -7,43 +7,44 @@ import DragonBall from "./DragonBall";
 export default class ConveyorBelt extends Furniture {
     isBusy = false;
 
-    // put(object) {
-    //     if (!this.isBusy) {
-    //         this.isBusy = true;
-    //         this.content.push(object);
-    //         console.log(`${this.getNameObject()} is on CoveyorBelt`)
-    //     } else {
-    //         console.log("Sorry i'm busy come later");
-    //     }
-    // }
+    put(object) {
+        if (this.isBusy) {
+            console.log("Sorry i'm busy come later");
+            return
+        }
+        this.isBusy = true;
+        this.content.push(object);
+        console.log(`${this.getNameObject()} is on CoveyorBelt`)
+    }
 
-    // take() {
-    //     if (this.content.length == 0) {
-    //         console.log("Sorry nothing is on the conveyorBelt try later");
-    //     } else {
-    //         this.isBusy = false;
-    //         console.log(`${this.getNameObject()} is been taken`);
-    //     }
-    // }
+    take() {
+        if (this.content.length == 0) {
+            console.log("Sorry nothing is on the conveyorBelt try later");
+            return
+        }
+        this.isBusy = false;
+        console.log(`${this.getNameObject()} is been taken`);
+    }
 
     in() {
-        if (!this.isBusy) {
-            const object = this.#randomObject();
-            this.content.push(object)
-            this.isBusy = true
-        } else {
+        if (this.isBusy) {
             console.log("Sorry i'm busy come later");
+            return
         }
+        const object = this.#randomObject();
+        this.content.push(object)
+        this.isBusy = true
+        console.log(`${this.getNameObject()} is on CoveyorBelt`);
     }
 
     out() {
-        if (this.isBusy) {
-            console.log(`I send to Santa your ${this.getNameObject()} `);
-            this.content.pop();
-            this.isBusy = false;
-        } else {
+        if (!this.isBusy) {
             console.log("Sorry i can't send nothing to Santa");
+            return
         }
+        console.log(`I send to Santa your ${this.getNameObject()} `);
+        this.content.pop();
+        this.isBusy = false;
     }
 
     #randomObject() {
