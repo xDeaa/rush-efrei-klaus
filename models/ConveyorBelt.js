@@ -7,6 +7,7 @@ import DragonBall from "./DragonBall";
 export default class ConveyorBelt extends Furniture {
     isBusy = false;
 
+    // Put an object on CoveyorBelt
     put(object) {
         if (this.isBusy) {
             console.log("Sorry i'm busy come later");
@@ -17,6 +18,7 @@ export default class ConveyorBelt extends Furniture {
         console.log(`${this.getNameObject()} is on CoveyorBelt`)
     }
 
+    // Take the object on CoveyorBelt
     take() {
         if (this.content.length == 0) {
             console.log("Sorry nothing is on the conveyorBelt try later");
@@ -26,6 +28,7 @@ export default class ConveyorBelt extends Furniture {
         console.log(`${this.getNameObject()} is been taken`);
     }
 
+    // Put a random object on CoveyorBelt
     in() {
         if (this.isBusy) {
             console.log("Sorry i'm busy come later");
@@ -37,6 +40,7 @@ export default class ConveyorBelt extends Furniture {
         console.log(`${this.getNameObject()} is on CoveyorBelt`);
     }
 
+    // Send to santa if is a gift else drop the object
     out(object = '') {
         this.content.pop();
         if (object) {
@@ -51,6 +55,7 @@ export default class ConveyorBelt extends Furniture {
         this.isBusy = false;
     }
 
+    // Return random object Box,GiftWrap,Pony,DragonBall
     #randomObject() {
         const random = Math.floor(Math.random() * Math.floor(4))
         if (random == 0) return new Box();

@@ -6,6 +6,7 @@ export default class Furniture {
 
     take() { return }
 
+    // Get the name constructor of the object
     getNameObject(param = '') {
         if (param) {
             return Object.getPrototypeOf(param.constructor).name
