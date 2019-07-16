@@ -58,8 +58,8 @@ andrea.look(table);
 
 // // Get random object on ConveyorBelt
 andrea.in(conveyor);
-andrea.in(conveyor);
-
+// andrea.in(conveyor);
+andrea.automatisationPackage(table,conveyor)
 // andrea.look(conveyor);
 
 // // Send to santa what'is on ConveyorBelt

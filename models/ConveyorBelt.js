@@ -37,13 +37,17 @@ export default class ConveyorBelt extends Furniture {
         console.log(`${this.getNameObject()} is on CoveyorBelt`);
     }
 
-    out() {
+    out(object = '') {
+        this.content.pop();
+        if (object) {
+            console.log(`I send to Santa your ${this.getNameObject(object)} `);
+            return
+        }
         if (!this.isBusy) {
             console.log("Sorry i can't send nothing to Santa");
             return
         }
-        console.log(`I send to Santa your ${this.getNameObject()} `);
-        this.content.pop();
+        console.log(`I drop your ${this.getNameObject()} `);
         this.isBusy = false;
     }
 

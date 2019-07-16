@@ -11,9 +11,10 @@ export default class Table extends Furniture {
         console.log(`${this.getNameObject(lastItem)} is been taken`);
     }
 
-    // take(index) {
-
-    // }
+    take(position) {
+        const element = this.content.splice(position, 1);
+        return element;
+    }
 
     put(object) {
         if (this.content.length >= 10) {

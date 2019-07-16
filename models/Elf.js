@@ -19,27 +19,19 @@ export default class Elf {
     }
 
     pack(packaging, toy) {
-        switch (packaging instanceof Box) {
-            case true:
-                if (packaging.isOpen) {
-                    if (packaging.toy != null) {
-                        console.log("Sorry this package already filled");
-                    }
-                    packaging.insert(toy);
-                    console.log(`Yeaaaah! Just packing the toy ~~ ${toy.type} ~~`);
-                } else {
-                    console.log("Sorry this package is not open");
-                }
-                break;
-            case false:
-                if (packaging.toy == null) {
-                    packaging.insert(toy);
-                    console.log(`Yeaaaah! Just packing the toy ~~ ${toy.type} ~~`);
-                } else {
-                    console.log("Sorry this package already filled");
-                }
-                break;
+        if (packaging instanceof Box) {
+            if (!packaging.isOpen) {
+                console.log("Sorry this package is not open");
+                return
+            }
         }
+        if (packaging.toy != null) {
+            console.log("Sorry this package already filled");
+            return
+        }
+        packaging.insert(toy);
+        console.log(`Yeaaaah! Just packing the toy ~~ ${toy.type} ~~`);
+        return toy;
     }
 
     unpack(packaging) {
@@ -74,7 +66,8 @@ export default class Elf {
         furnitures.content.forEach(element => {
             (element instanceof Toy) ? list.push('Toy') : list.push(Object.getPrototypeOf(element.constructor).name)
         });
-        console.log(list);
+        // console.log(list);
+        return list;
     }
 
     in(belt) {
@@ -83,5 +76,36 @@ export default class Elf {
 
     out(belt) {
         belt.out()
+    }
+
+    automatisationPackage(table, conveyor) {
+        const itemConveyor = this.look(conveyor);
+        if (itemConveyor == 'Packaging') {
+            const checkTable = this.#checkObjectTable(table, 'Toy');
+            const packaging = conveyor.content[0];
+            if( packaging instanceof Box) {
+                packaging.open();
+            }
+            if (checkTable) {
+                const gift = this.pack(conveyor.content[0], checkTable[0]);
+                conveyor.out(gift);
+            }
+        }
+    }
+
+    #checkObjectTable(table, type) {
+        const items = this.look(table);
+        let object;
+        if (items.length == 0) {
+            console.log("Sorry nothing is on Table");
+            return object;
+        }
+        items.forEach(element => {
+            if (element == type) {
+                const index = items.indexOf(element);
+                object = table.take(index);
+            }
+        });
+        return object;
     }
 }
